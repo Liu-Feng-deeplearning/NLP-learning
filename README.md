@@ -10,7 +10,7 @@ https://github.com/jindongwang/MachineLearning
 
 ## 2. NLP 问题
 
-2.1 [使用CNN RNN Attention解决大规模文本分类问题] （http://www.sohu.com/a/130492867_642762）
+2.1 [使用CNN RNN Attention解决大规模文本分类问题]（http://www.sohu.com/a/130492867_642762）
 
 2.2 有助于理解CNN处理NLP问题的案例（from 杨老师）   
 http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/
