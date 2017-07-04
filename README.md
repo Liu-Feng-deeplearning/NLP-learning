@@ -4,12 +4,12 @@
 
 ## 1. 机器学习入门资料
 
-1.1 jindongwang的github，介绍了很多入门的内容
+1.1 jindongwang的github，介绍了很多入门的内容   
 https://github.com/jindongwang/MachineLearning
 
 ## 2. NLP+CNN
 
-2.1 有助于理解CNN处理NLP问题的案例（from 杨老师）
+2.1 有助于理解CNN处理NLP问题的案例（from 杨老师）   
 http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/
 http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/
 
