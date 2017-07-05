@@ -22,6 +22,14 @@ coursera上视频太慢，大多数时候不建议。
 
 ### 1.2 开源project
 
+动手写永远是最重要的。主要是以kaggle比赛为主。因为刚刚入门，大多还停留在熟悉各种语法和研究各位大神kernel的阶段。
+[一些当时做的笔记](https://github.com/liufeng900204/Kaggle-Notebook/wiki)
+kaggle 的问题在于数据过于干净了，相对实际应用场合还是会有各种问题，但相对来说，作为初学者已经很好了。
+
+### 1.3 框架学习&系统配置搭建
+
+这个过程走了许多弯路，包括学习keras/Theona/tensorflow，然后换操作系统到ubuntu，折腾GPU和显卡。这些内容琐碎，而且到处都是坑。因为转行过来的，开始习惯写blog，写github，用markdown等程序员必备。
+
 - - -
 
 
