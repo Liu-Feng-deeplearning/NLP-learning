@@ -7,6 +7,7 @@
 
 1.1 jindongwang的github，介绍了很多入门的内容   
 https://github.com/jindongwang/MachineLearning
+[PRML中英文下载](http://ddl.escience.cn/f/Iwoo#)
 
 ## 2. NLP 问题
 
