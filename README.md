@@ -47,7 +47,7 @@ http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tens
 https://github.com/tensorflow/models/tree/master/tutorials/rnn
 https://github.com/tensorflow/models/tree/master/tutorials/rnn/ptb
 
-## 2.2 LDA算法   
+### 2.2 LDA算法   
 
 [通俗理解LDA主题模型](http://blog.csdn.net/v_july_v/article/details/41209515)
 [火光摇曳的blog](http://www.flickering.cn/tag/lda/)
