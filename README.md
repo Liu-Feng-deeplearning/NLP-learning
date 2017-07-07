@@ -35,17 +35,21 @@ kaggle 的问题在于数据过于干净了，相对实际应用场合还是会�
 
 ## 2. NLP 问题
 
-2.1  [使用CNN RNN Attention解决大规模文本分类问题](http://www.sohu.com/a/130492867_642762)
+### 2.1 神经网络：CNN or RNN   
 
-2.2 有助于理解CNN处理NLP问题的案例（from 杨老师）   
+[使用CNN RNN Attention解决大规模文本分类问题](http://www.sohu.com/a/130492867_642762)
+   
+有助于理解CNN处理NLP问题的案例（from 杨老师）   
 http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/
 http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/
-
-2.3 有助于理解RNN处理NLP问题的案例（from 杨老师）
+   
+有助于理解RNN处理NLP问题的案例（from 杨老师）
 https://github.com/tensorflow/models/tree/master/tutorials/rnn
 https://github.com/tensorflow/models/tree/master/tutorials/rnn/ptb
 
+## 2.2 LDA算法   
 
-
+[通俗理解LDA主题模型](http://blog.csdn.net/v_july_v/article/details/41209515)
+[火光摇曳的blog](http://www.flickering.cn/tag/lda/)
 
 
