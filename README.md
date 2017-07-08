@@ -12,12 +12,14 @@ coursera上视频太慢，大多数时候不建议。
 - jindongwang的github，介绍了很多入门的内容：https://github.com/jindongwang/MachineLearning   
 - andrew Ng 机器学习 coursera公开课。入门级别 作业matlab。简单，通俗，极其适合作为入门级别的第一门课。
 - 统计学习基石&技法 林轩田 youtube。可以补充Ng没有讲过的内容，ensenble method一大类Ng讲得很少。但是因为没有做作业所以收获感觉不大。
-- 机器学习 周志华。 前八九章讲得深浅适中，看书理解效率高。后面有点难还没看完。
+- 机器学习 周志华。 目前为止看到最好的一本书，前八九章讲得深浅适中，看书理解效率高。概率图和PCA和半监督学习那几章都是简单介绍入门吧，在后面就是更多纯理论东西，暂时看不大懂。
 - CS231N FeiFei。 Stanford 课质量有保证，对神经网络讲得深入透彻，主要是写了一遍作业感觉还很有收获。
-- CS224 （正在看，待补充）
+- CS224 （正在看，待补充）   
+课后作业答案or笔记：https://github.com/bogatyy/cs224d  http://blog.csdn.net/han_xiaoyang/article/details/51760923  https://wugh.github.io/posts/2016/02/cs224d-notes1-word2vec/   
 - 统计学习方法 李航。 大家都说好，看了几天，过于精炼和抽象，没有example，感觉看不大懂（扔了）。
 - PRML & MLAPP 。 大部头，概率讲得太多，而且数学推导太多，看了前几章，感觉过于纠结一下数学上的tips，不是很适合我。而且目前最火的NN基本没讲。暂时先放了。 [PRML中英文下载](http://ddl.escience.cn/f/Iwoo#)
-- CMU 10715 https://www.cs.cmu.edu/~epxing/Class/10715/ 正在看
+- CMU 10715 https://www.cs.cmu.edu/~epxing/Class/10715/ 数学（概率方面）讲得很多，和PRML结合着看，在beyas和EM方面讲得还很不错，例如在概率的角度来理解LR和SVM方法。
+
 
 ### 1.2 开源project
 
