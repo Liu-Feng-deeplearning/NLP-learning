@@ -5,7 +5,8 @@
 ## 1. 机器学习入门  
 
 机器学习教材和资料很多，经常会东一下西一下，搞得乱而且没条理。要沉心，把材料耐心看完。
-学习效率：写课后作业>看课堂笔记>课程notes>课程lecture>看书>课程视频
+学习效率：写课后作业>看课堂笔记>课程notes>课程lecture>看书>课程视频   
+
 coursera上视频太慢，大多数时候不建议。
 
 ### 1.1 看过的公开课和书
@@ -47,8 +48,8 @@ github 初初初初级入门：[建立项目&push&pull](http://blog.csdn.net/tin
 http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/
 http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/
 
-有助于理解RNN处理NLP问题的案例（from 杨老师）
-https://github.com/tensorflow/models/tree/master/tutorials/rnn
+有助于理解RNN处理NLP问题的案例（from 杨老师）    
+https://github.com/tensorflow/models/tree/master/tutorials/rnn   
 https://github.com/tensorflow/models/tree/master/tutorials/rnn/ptb
 
 ### 2.2 LDA算法   

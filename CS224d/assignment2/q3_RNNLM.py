@@ -124,9 +124,13 @@ class RNNLM_Model(LanguageModel):
       outputs: List of length num_steps, each a tensor of shape
                (batch_size, len(vocab)
     """
-    ### YOUR CODE HERE
-    raise NotImplementedError
-    ### END YOUR CODE
+    
+    self.U = tf.get_variable("U", [self.config.hidden_size, len(self.vocab)])
+    self.b_2 = tf.get_variable("b_2", [len(self.vocab)])
+    outputs = [tf.matmul(tf.nn.dropout(state, self.dropout_placeholder), self.U) + self.b_2
+              for state in rnn_outputs]
+    
+    
     return outputs
 
   def add_loss_op(self, output):
@@ -139,9 +143,13 @@ class RNNLM_Model(LanguageModel):
     Returns:
       loss: A 0-d tensor (scalar)
     """
-    ### YOUR CODE HERE
-    raise NotImplementedError
-    ### END YOUR CODE
+   
+    loss = sequence_loss([output],
+                         [tf.reshape(
+                             self.labels_placeholder,
+                             [self.config.batch_size * self.config.num_steps, -1])],
+                         [tf.constant(1.0)])
+          
     return loss
 
   def add_training_op(self, loss):
@@ -163,9 +171,9 @@ class RNNLM_Model(LanguageModel):
     Returns:
       train_op: The Op for training.
     """
-    ### YOUR CODE HERE
-    raise NotImplementedError
-    ### END YOUR CODE
+    
+    train_op = tf.train.AdamOptimizer(self.config.lr).minimize(loss)
+    
     return train_op
   
   def __init__(self, config):
@@ -225,9 +233,19 @@ class RNNLM_Model(LanguageModel):
       outputs: List of length num_steps, each of whose elements should be
                a tensor of shape (batch_size, hidden_size)
     """
-    ### YOUR CODE HERE
-    raise NotImplementedError
-    ### END YOUR CODE
+    
+    self.H = tf.get_variable("H", [self.config.hidden_size, self.config.hidden_size])
+    self.I = tf.get_variable("I", [self.config.embed_size, self.config.hidden_size])
+    self.b_1 = tf.get_variable("b_1", [self.config.hidden_size])
+    self.initial_state = tf.zeros((self.config.batch_size, self.config.hidden_size))
+    state = self.initial_state
+    rnn_outputs = []
+    for time_step in range(self.config.num_steps):
+      state = tf.nn.sigmoid(tf.matmul(state, self.H) + tf.matmul(inputs[time_step], self.I) + self.b_1)
+      rnn_outputs.append(state)
+    self.final_state = state
+    
+    
     return rnn_outputs
 
 
@@ -282,10 +300,11 @@ def generate_text(session, model, config, starting_text='<eos>',
   state = model.initial_state.eval()
   # Imagine tokens as a batch size of one, length of len(tokens[0])
   tokens = [model.vocab.encode(word) for word in starting_text.split()]
-  for i in xrange(stop_length):
-    ### YOUR CODE HERE
-    raise NotImplementedError
-    ### END YOUR CODE
+  for i in range(stop_length):
+    state, prediction = feed_token(session, model, state, tokens[-1])
+    next_word_idx = sample(prediction.flatten(), temperature=temp)
+    tokens.append(next_word_idx)
+    
     next_word_idx = sample(y_pred[0], temperature=temp)
     tokens.append(next_word_idx)
     if stop_tokens and model.vocab.decode(tokens[-1]) in stop_tokens:
@@ -317,34 +336,34 @@ def test_RNNLM():
     best_val_epoch = 0
   
     session.run(init)
-    for epoch in xrange(config.max_epochs):
-      print 'Epoch {}'.format(epoch)
+    for epoch in range(config.max_epochs):
+      print ('Epoch {}'.format(epoch))
       start = time.time()
       ###
       train_pp = model.run_epoch(
           session, model.encoded_train,
           train_op=model.train_step)
       valid_pp = model.run_epoch(session, model.encoded_valid)
-      print 'Training perplexity: {}'.format(train_pp)
-      print 'Validation perplexity: {}'.format(valid_pp)
+      print ('Training perplexity: {}'.format(train_pp))
+      print ('Validation perplexity: {}'.format(valid_pp))
       if valid_pp < best_val_pp:
         best_val_pp = valid_pp
         best_val_epoch = epoch
         saver.save(session, './ptb_rnnlm.weights')
       if epoch - best_val_epoch > config.early_stopping:
         break
-      print 'Total time: {}'.format(time.time() - start)
+      print ('Total time: {}'.format(time.time() - start))
       
     saver.restore(session, 'ptb_rnnlm.weights')
     test_pp = model.run_epoch(session, model.encoded_test)
-    print '=-=' * 5
-    print 'Test perplexity: {}'.format(test_pp)
-    print '=-=' * 5
+    print ('=-=' * 5)
+    print ('Test perplexity: {}'.format(test_pp))
+    print ('=-=' * 5)
     starting_text = 'in palo alto'
     while starting_text:
-      print ' '.join(generate_sentence(
-          session, gen_model, gen_config, starting_text=starting_text, temp=1.0))
-      starting_text = raw_input('> ')
+      print (' '.join(generate_sentence(
+          session, gen_model, gen_config, starting_text=starting_text, temp=1.0)))
+      starting_text = raw_input('> ') 
 
 if __name__ == "__main__":
     test_RNNLM()
