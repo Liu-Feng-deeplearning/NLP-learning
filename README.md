@@ -55,7 +55,7 @@ https://github.com/tensorflow/models/tree/master/tutorials/rnn/ptb
 [Minimal character level language model](https://github.com/weixsong/min-char-rnn)
 100行的代码，建立了一个model，不考虑单词本身的含义，只考虑字母之间的排列顺序。（类似于词袋模型？）
 
-
+ 
 ### 2.2 LDA算法   
 
 [通俗理解LDA主题模型](http://blog.csdn.net/v_july_v/article/details/41209515)
